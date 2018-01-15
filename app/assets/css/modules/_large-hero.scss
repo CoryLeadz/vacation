@@ -1,0 +1,43 @@
+/* ========================================================================== 
+                                LARGE HERO
+========================================================================== */
+
+img {
+    max-width: 100%; 
+    height: auto; 
+}
+
+.large-hero {
+    position: relative; 
+
+    &__content {
+        position: absolute; 
+        top: 50%; 
+        transform: translateY(-50%); 
+        left: 0; 
+        width: 100%; 
+        text-align: center; 
+    }
+
+    &__title {
+        font-weight: 300;
+        color: $mainBlue; 
+        font-size: 5rem; 
+        margin: 0; 
+    }
+    
+    &__subtitle {
+        font-weight: 300;
+        color: $mainBlue; 
+        font-size: 3rem; 
+        margin: 0; 
+    }
+
+    &__description {
+        color: #fff; 
+        font-size: 1.875rem; 
+        text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.2);
+        max-width: 480px; 
+        margin: 20px auto; 
+    }
+}
