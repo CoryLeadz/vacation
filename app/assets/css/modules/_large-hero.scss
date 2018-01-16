@@ -7,7 +7,7 @@ img {
     height: auto; 
 }
 
-.large-hero {
+.hero {
     position: relative; 
 
     &__content {
@@ -19,21 +19,34 @@ img {
         text-align: center; 
     }
 
-    &__title {
+    &__h1 {
         font-weight: 300;
-        color: $mainBlue; 
-        font-size: 5rem; 
+        color: purple; 
+        font-size: 1.1rem; 
         margin: 0; 
+
+        @mixin atSmall {
+            font-size: 2rem;
+        }
+
+        @mixin atMedium {
+            font-size: 3.2rem;
+        }
+
+        @mixin atLarge {
+            font-size: 4.8rem;
+        }
     }
+
     
-    &__subtitle {
+    &__h2 {
         font-weight: 300;
         color: $mainBlue; 
-        font-size: 3rem; 
+        font-size: 1.1rem; 
         margin: 0; 
     }
 
-    &__description {
+    &__text {
         color: #fff; 
         font-size: 1.875rem; 
         text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.2);

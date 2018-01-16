@@ -5,6 +5,7 @@ autoprefixer = require('autoprefixer'),
 cssvars = require('postcss-simple-vars'),
 nested = require('postcss-nested'),
 cssImport = require('postcss-import'),
+mixins = require('postcss-mixins'),
 browserSync = require('browser-sync').create();
 
 // 'gulp' task
@@ -16,6 +17,7 @@ browserSync = require('browser-sync').create();
 gulp.task('watch', function(){
 
     browserSync.init({
+        // browser: 'google chrome',
         notify: false, 
         server: "app"
     });
@@ -34,7 +36,7 @@ gulp.task('watch', function(){
 // inject CSS into browserSync without reload 
 
 gulp.task('cssInject', ['css'], function(){
-    return gulp.src('app/temp/css/style.css')
+    return gulp.src('./app/temp/css/style.css')
     .pipe(browserSync.stream());
 });
 
@@ -42,12 +44,12 @@ gulp.task('cssInject', ['css'], function(){
 // Gulp CSS 
 
 gulp.task('css', function() {
-    return gulp.src('app/assets/css/style.css')
-        .pipe(postcss([cssImport, cssvars, nested, autoprefixer]))
+    return gulp.src('./app/assets/css/style.css')
+        .pipe(postcss([cssImport, mixins, cssvars, nested, autoprefixer]))
         .on('error', function(error){
             console.log(error.toString());
             this.emit('end');
         })
-        .pipe(gulp.dest('app/temp/css/'));
+        .pipe(gulp.dest('./app/temp/css/'))
 });
 
