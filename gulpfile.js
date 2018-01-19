@@ -6,7 +6,8 @@ cssvars = require('postcss-simple-vars'),
 nested = require('postcss-nested'),
 cssImport = require('postcss-import'),
 mixins = require('postcss-mixins'),
-browserSync = require('browser-sync').create();
+browserSync = require('browser-sync').create(),
+webpack = require('webpack');
 
 // 'gulp' task
 /*  TODO understand the task integration and argument passing of multiple tasks and build out a macro function of 'gulp' that starts the fundamental requirements. BrowserSync may not be one of them. 
@@ -29,6 +30,10 @@ gulp.task('watch', function(){
 
     watch('app/assets/css/**/*.scss', function(){
         gulp.start('cssInject');
+    });
+
+    watch('app/assets/scripts/**/*.js', function(){
+        gulp.start('webpacks');
     });
     
 });
@@ -53,3 +58,9 @@ gulp.task('css', function() {
         .pipe(gulp.dest('./app/temp/css/'))
 });
 
+gulp.task('webpacks', function(callback){
+    webpack(require('./webpack.config.js'), function(){
+        console.log('Webpack completed.');
+        callback();
+    });
+});
