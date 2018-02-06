@@ -7,7 +7,20 @@ body {
     color: #333;
 }
 
+* {
+    box-sizing: border-box; 
+}
+
 a {
     text-decoration: none; 
     font-style: italic;
+    color: $mainOrange;
+}
+
+p a {
+    font-weight: 700; 
+}
+
+.center {
+    text-align: center; 
 }
