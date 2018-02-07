@@ -2,23 +2,35 @@
 
     @mixin clearfix; 
 
-    &--gutters > div {
-        padding-right: 65px; 
-    }
-
-    &--gutters {
-        margin-right: -65px; 
-    }
+    @mixin atSmall {
 
     &--b-margin-max-md {
         margin-bottom: 1rem; 
     }
+}
 
     @mixin atMedium {
 
     &--b-margin-max-md {
         margin-bottom: 0; 
         }
+
+        &--gutters > div {
+            padding-right: 65px; 
+        }
+    
+        &--gutters {
+            padding-right: -65px; 
+        }
+    
+        &--gutters-lg {
+            padding-right: -100px; 
+        }
+    
+        &--gutters-lg > div {
+            padding-right: 100px; 
+        }
+    
     }
 }
 
@@ -40,6 +52,11 @@
     float: left; 
     width: 33.33%; 
 }
+
+.col-md-6 {
+    float: left; 
+    width: 50%; 
+    }
 
 .col-md-8 {
     float: left; 

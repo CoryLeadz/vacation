@@ -12,5 +12,7 @@
 @import 'modules/_headline.scss';
 @import 'modules/_grid.scss';
 @import 'modules/_content-container.scss';
+@import 'modules/_section-title.scss';
+@import 'modules/_feature-item.scss';
 
 
