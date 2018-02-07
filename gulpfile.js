@@ -7,6 +7,9 @@ nested = require('postcss-nested'),
 cssImport = require('postcss-import'),
 mixins = require('postcss-mixins'),
 browserSync = require('browser-sync').create(),
+svgSprite = require('gulp-svg-sprite'),
+rename = require('gulp-rename'),
+del = require('del'),
 webpack = require('webpack');
 
 // 'gulp' task
@@ -64,3 +67,47 @@ gulp.task('webpacks', function(callback){
         callback();
     });
 });
+
+
+// SVG Sprite generator 
+
+var config = {
+    mode: {
+        css: {
+            sprite: 'sprite.svg',
+            render: {
+                css: {
+                    template: './app/templates/sprite.css'
+                }
+            }
+        }
+    }
+}
+
+gulp.task('startCleanSprite', function(){
+    return del(['./app/temp/sprite', './app/assets/images/sprites']);
+});
+
+gulp.task('createSprite', ['startCleanSprite'], function() {
+    return gulp.src('./app/assets/images/icons/**/*.svg')
+        .pipe(svgSprite(config))
+        .pipe(gulp.dest('./app/temp/sprite/'));
+});
+
+gulp.task('copySprite', ['createSprite'], function(){
+    return gulp.src('./app/temp/sprite/css/**/*.svg')
+        .pipe(gulp.dest('./app/assets/images/sprites'));
+});
+
+gulp.task('moveSprite', ['createSprite'], function(){
+    return gulp.src('./app/temp/sprite/css/*.css')
+        .pipe(rename('_sprite.css'))
+        .pipe(gulp.dest('./app/assets/css/modules'));
+});
+
+gulp.task('endCleanSprite', ['moveSprite', 'copySprite'], function(){
+    return del('./app/temp/sprite')
+});
+
+
+gulp.task('icons', ['startCleanSprite', 'createSprite', 'copySprite', 'moveSprite', 'endCleanSprite']);
