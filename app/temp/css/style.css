@@ -606,6 +606,11 @@ p {
         max-width: 976px;
     }
 
+.wrapper .wrapper {
+        padding-left: 0;
+        padding-right: 0;
+      }
+
 .wrapper--b-margin {
 
         margin-bottom: 1rem;
@@ -618,13 +623,9 @@ p {
     } 
 }
 
-.wrapper .wrapper {
-        padding-left: 0px; 
-        padding-right: 0px; 
-    }
-
 .page-section {
-    padding: 1.2rem 0;
+   
+     padding: 1.2rem 0;
 }
 
 .page-section__blue {
@@ -632,10 +633,45 @@ p {
         color: #fff; 
     }
 
-@media (min-width: 800px) {
+@media (min-width: 1010px) {
 
 .page-section {
         padding: 4.5rem 0
+} 
+}
+
+.page-section--testimonials {
+
+        background-color: #e0e6ef;
+    }
+
+@media (min-width: 1010px) {
+
+.page-section--testimonials {
+            background: url('/assets/images/testimonials-bg.jpg') top center no-repeat; 
+            background-size: cover
+    } 
+}
+
+.page-section--no-pad-sm {
+        padding-bottom: 0;
+}
+
+@media (min-width: 800px) {
+
+.page-section--no-pad-sm {
+            padding-bottom: 4.5rem
+} 
+}
+
+.page-section--no-pad-md {
+    padding-bottom: 0;
+}
+
+@media (min-width: 1010px) {
+
+.page-section--no-pad-md {
+        padding-bottom: 4.5rem
 } 
 }
 
@@ -719,6 +755,14 @@ p {
         .row--gutters {
             padding-right: -65px; 
         }
+
+        .row--gutters-sm {
+            padding-right: -45px; 
+        }
+    
+        .row--gutters-sm > div {
+            padding-right: 45px; 
+        }
     
         .row--gutters-lg {
             padding-right: -100px; 
@@ -726,6 +770,17 @@ p {
     
         .row--gutters-lg > div {
             padding-right: 100px; 
+        } 
+}
+
+@media (min-width: 1010px) {
+        
+        .row--gutters-sm-on-lg {
+            padding-right: -45px; 
+        }
+    
+        .row--gutters-sm-on-lg > div {
+            padding-right: 45px; 
         } 
 }
 
@@ -758,6 +813,93 @@ p {
     width: 66.66%; 
     } 
 }
+
+@media (min-width: 1010px) {
+
+    .col-lg-4 {
+        float: left; 
+        width: 33.33%; 
+    }
+    
+    .col-lg-6 {
+        float: left; 
+        width: 50%; 
+        }
+    
+    .col-lg-8 {
+        float: left; 
+        width: 66.66%; 
+        } 
+}
+
+/* SPACING */
+
+@media (min-width: 800px) {
+
+.t-pad-md {
+        padding-top: 80px 
+} 
+}
+
+.pad-md {
+    padding-left: 0; 
+    padding-right: 0;
+}
+
+@media (min-width: 800px) {
+
+.pad-md {
+        padding-left: 18px; 
+        padding-right: 18px
+} 
+}
+
+.pad-lg {
+    padding-left: 0; 
+    padding-right: 0;
+}
+
+@media (min-width: 1010px) {
+
+.pad-lg {
+        padding-left: 18px; 
+        padding-right: 18px
+} 
+}
+
+/* FLEXBOX */
+
+@media (min-width: 800px) {
+
+.flex-height-md {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex
+} 
+}
+
+.flex-height-md > div {
+        float: left; 
+        display: -webkit-box; 
+        display: -ms-flexbox; 
+        display: flex; 
+    }
+
+@media (min-width: 1010px) {
+
+.flex-height-lg {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex
+} 
+}
+
+.flex-height-lg > div {
+        float: left; 
+        display: -webkit-box; 
+        display: -ms-flexbox; 
+        display: flex; 
+    }
 
 .content-container p {
         line-height: 1.65; 
@@ -794,12 +936,18 @@ p {
 @media (min-width: 530px) {
 
 .section-title__icon {
+            position: relative;
+            top: 10px;
             margin-right: 0.5rem;
             margin-left: 0; 
             display: inline-block; 
             margin-bottom: 0
     } 
 }
+
+.section-title--blue {
+        color: #2f5572; 
+    }
 
 .feature-item {
     position: relative; 
@@ -843,5 +991,51 @@ p {
 
     } 
 }
+
+.testimonial {
+    background-color: rgba(255,255,255,0.8);
+    padding: 0 18px 1px 18px; 
+    margin-top: 98px;
+}
+
+@media (min-width: 1010px) {
+
+.testimonial {
+        margin-top: 0; 
+        padding: 0 1.8125rem 1px 1.8125rem
+} 
+}
+
+.testimonial__img {
+        border-radius: 50%; 
+    }
+
+.testimonial__photo {
+        border-radius: 80px; 
+        overflow: hidden; 
+        width: 160px; 
+        height:160px;
+        margin: 0 auto 0 auto; 
+        position: relative; 
+        top: -80px;
+        margin-bottom: -80px; 
+        border: 5px solid rgba(255,255,255,0.8); 
+    }
+
+.testimonial h3 {
+        color: #2f5572; 
+        text-align: center; 
+        font-size: 1.5rem; 
+        font-weight: 500; 
+        margin: 0; 
+    }
+
+.testimonial h4 {
+        color: #d59541; 
+        text-align: center; 
+        font-weight: 400;
+        font-size: 0.94rem; 
+        margin: 0.25rem 0 1rem 0; 
+    }
 
 
