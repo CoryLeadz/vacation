@@ -832,7 +832,7 @@ p {
         font-weight: 300; 
         margin-bottom: .8rem; 
         text-align: center;
-    
+
     }
 
 @media (min-width: 530px) {
@@ -840,7 +840,7 @@ p {
 .feature-item__title {
         font-size: 1.875rem; 
         text-align: left
-    
+
     } 
 }
 
