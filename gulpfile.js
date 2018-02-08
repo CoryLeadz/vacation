@@ -10,6 +10,7 @@ browserSync = require('browser-sync').create(),
 svgSprite = require('gulp-svg-sprite'),
 rename = require('gulp-rename'),
 del = require('del'),
+hexrgba = require('postcss-hexrgba'),
 webpack = require('webpack');
 
 // 'gulp' task
@@ -53,7 +54,7 @@ gulp.task('cssInject', ['css'], function(){
 
 gulp.task('css', function() {
     return gulp.src('./app/assets/css/style.css')
-        .pipe(postcss([cssImport, mixins, cssvars, nested, autoprefixer]))
+        .pipe(postcss([cssImport, mixins, cssvars, nested, hexrgba, autoprefixer]))
         .on('error', function(error){
             console.log(error.toString());
             this.emit('end');

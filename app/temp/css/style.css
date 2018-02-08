@@ -510,7 +510,15 @@ img {
         left: 0;
         width: 100%;
         text-align: center;
+        padding-top: 88px;
     }
+
+@media (min-width: 800px) {
+
+.hero__content {
+            padding-top: 60px
+    } 
+}
 
 .hero__h1 {
         font-weight: 300;
@@ -1135,5 +1143,109 @@ p {
             margin-right: 1.4rem
     } 
 }
+
+.header {
+    position: absolute; 
+    z-index: 10;    
+    width: 100%; 
+    padding: 10px 0;
+}
+
+@media (min-width: 800px) {
+
+.header {
+        background-color: rgba(47,85,114, .3)
+} 
+}
+
+.header__btn-container {
+        float: right; 
+    }
+
+.header__btn-container .btn {
+        font-size: 1rem; 
+        padding: 1rem 1.4rem;
+    }
+
+.header__logo {
+        position: absolute; 
+        top: 0; 
+        left: 50%; 
+        -webkit-transform: translateX(-50%) scale(.8); 
+                transform: translateX(-50%) scale(.8);
+        -webkit-transform-origin: 50% 0;
+                transform-origin: 50% 0; 
+        background-color: #2f5572; 
+        padding: 25px 36px;
+    }
+
+@media (min-width: 800px) {
+
+.header__logo {
+            left: auto; 
+            -webkit-transform: translateX(0); 
+                    transform: translateX(0)
+    } 
+}
+
+.header__menu-icon {
+        width: 20px; 
+        height: 20px; 
+        background-color: #fff; 
+        position: absolute; 
+        top: 10px; 
+        right: 10px;
+    }
+
+@media (min-width: 800px) {
+
+.header__menu-icon {
+            display: none
+    } 
+}
+
+.header__title {
+        text-indent: -9999px; 
+    }
+
+.header__menu-content {
+        display: none;
+    }
+
+@media (min-width: 800px) {
+
+.header__menu-content {
+            display: block
+    } 
+}
+
+.primary-nav--pull-right {
+        float: right; 
+    }
+
+.primary-nav ul {
+        margin: 0; 
+        padding: 0; 
+    }
+
+.primary-nav ul::after {
+        content: "";
+        clear: both; 
+        display: table; 
+    }
+
+.primary-nav li {
+        list-style: none; 
+        float: left; 
+        padding-right: 20px;
+    }
+
+.primary-nav a {
+        color: #fff; 
+        font-weight: 300; 
+        text-decoration: none; 
+        display: block; 
+        padding: 16px 0; 
+    }
 
 
