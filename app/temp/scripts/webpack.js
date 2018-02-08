@@ -103,26 +103,28 @@ var MobileMenu = function () {
     function MobileMenu() {
         _classCallCheck(this, MobileMenu);
 
-        //Stopped around the 10:00min mark 
-
+        // TODO => Complete writing this below spheghetti and finish it.
         // $('site-header__menu-icon').click(function(){
         //    console.log('top right icon was clicked');
         // });
 
-
+        this.siteHeader = (0, _jquery2.default)('.header');
         this.menuIcon = (0, _jquery2.default)('.header__menu-icon');
+        this.menuContent = (0, _jquery2.default)('.header__menu-content');
         this.events();
     }
 
     _createClass(MobileMenu, [{
         key: 'events',
         value: function events() {
-            this.menuIcon.click(this.toggleTheMenu);
+            this.menuIcon.click(this.toggleTheMenu.bind(this));
         }
     }, {
         key: 'toggleTheMenu',
         value: function toggleTheMenu() {
-            console.log('toggle menu');
+            this.menuContent.toggleClass('header__menu-content--visible');
+            this.siteHeader.toggleClass('header--expanded');
+            this.menuIcon.toggleClass('header__menu-icon--close-x');
         }
     }]);
 
