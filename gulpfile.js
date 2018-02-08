@@ -37,7 +37,7 @@ gulp.task('watch', function(){
     });
 
     watch('app/assets/scripts/**/*.js', function(){
-        gulp.start('webpacks');
+        gulp.start('scriptsRefresh');
     });
     
 });
@@ -62,13 +62,22 @@ gulp.task('css', function() {
         .pipe(gulp.dest('./app/temp/css/'))
 });
 
-gulp.task('webpacks', function(callback){
-    webpack(require('./webpack.config.js'), function(){
-        console.log('Webpack completed.');
+
+// Webpack javascript file automation 
+
+gulp.task('scripts', function(callback){
+    webpack(require('./webpack.config.js'), function(err, stats){
+        if (err) {
+            console.log(err.toString());
+        }
+        console.log(stats.toString());
         callback();
     });
 });
 
+gulp.task('scriptsRefresh', ['scripts'], function() {
+    browserSync.reload();
+});
 
 // SVG Sprite generator 
 
