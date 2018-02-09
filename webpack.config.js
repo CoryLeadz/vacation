@@ -4,7 +4,7 @@ module.exports = {
     entry: './app/assets/scripts/app.js',
     output: {
         path: path.resolve(__dirname, './app/temp/scripts/'),
-        filename: "webpack.js"
+        filename: "app.js"
     },
     module: {
         loaders: [
