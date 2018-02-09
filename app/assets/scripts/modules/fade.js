@@ -3,8 +3,9 @@ import waypoints from '../../../../node_modules/waypoints/lib/noframework.waypoi
 
 class Fade {
 
-    constructor() {
-        this.itemsToReveal = $('.feature-item');
+    constructor(els, offset) {
+        this.itemsToReveal = els;
+        this.offsetPercentage = offset; 
         this.hideInitially();
         this.createWaypoints();
     }
@@ -14,14 +15,15 @@ class Fade {
     }
 
     createWaypoints() {
+        var that = this; 
         this.itemsToReveal.each(function(){
-            var currentItem = this; 
+            var currentItem = this;
             new Waypoint({
                 element: currentItem,
                 handler: function() {
                     $(currentItem).addClass('reveal-item--visible');
                 },
-                offset: "85%"
+                offset: that.offsetPercentage
             });
         });
     }
