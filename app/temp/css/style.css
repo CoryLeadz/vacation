@@ -1047,79 +1047,79 @@ p {
     }
 
 .icon {
-    background-image: url('../../assets/images/sprites/sprite-69f19c2e.svg');
+    background-image: url('../../assets/images/sprites/sprite-240e8c34.svg');
     }
 
 .icon--clear-view-escapes {
-        width: 142.4px;
-        height: 59.53px; 
+        width: 142.528px;
+        height: 59.531px; 
         background-position: 0 0; 
     }
 
 .icon--comment {
         width: 64px;
         height: 64px; 
-        background-position: 99.70443349753694% 0; 
+        background-position: 99.76748768472906% 0; 
     }
 
 .icon--facebook {
         width: 21.23px;
         height: 42.01px; 
-        background-position: 26.040607071652357% 45.795830448496034%; 
+        background-position: 26.040607071652357% 45.79659973844141%; 
     }
 
 .icon--fire {
         width: 56px;
         height: 64px; 
-        background-position: 0 99.56481481481481%; 
+        background-position: 0 99.56574074074075%; 
     }
 
 .icon--globe {
         width: 64px;
         height: 64px; 
-        background-position: 27.586206896551722% 99.56481481481481%; 
+        background-position: 27.586206896551722% 99.56574074074075%; 
     }
 
 .icon--instagram {
         width: 42.01px;
         height: 42.01px; 
-        background-position: 63.2917018534157% 49.234556504346486%; 
+        background-position: 63.34859327081203% 49.234556504346486%; 
     }
 
 .icon--mail {
         width: 64px;
         height: 48px; 
-        background-position: 0 48.00806451612903%; 
+        background-position: 0 48.008870967741935%; 
     }
 
 .icon--rain {
         width: 64px;
         height: 64px; 
-        background-position: 99.70443349753694% 59.25925925925926%; 
+        background-position: 99.76748768472906% 59.25925925925926%; 
     }
 
 .icon--star {
         width: 64px;
         height: 64px; 
-        background-position: 59.11330049261084% 99.56481481481481%; 
+        background-position: 59.11330049261084% 99.56574074074075%; 
     }
 
 .icon--twitter {
         width: 51.78px;
         height: 42.06px; 
-        background-position: 94.04330452560171% 98.50700323226104%; 
+        background-position: 94.10277855217916% 98.50700323226104%; 
     }
 
 .icon--wifi {
         width: 60px;
         height: 64px; 
-        background-position: 68.79227053140097% 0; 
+        background-position: 68.85410628019324% 0; 
     }
 
 .icon--youtube {
         width: 34.75px;
         height: 42px; 
-        background-position: 36.69752421959096% 45.792307692307695%; 
+        background-position: 36.69752421959096% 45.79307692307692%; 
     }
 
 .footer {
@@ -1149,8 +1149,8 @@ p {
     z-index: 10;    
     width: 100%; 
     padding: 10px 0; 
-    -webkit-transition: background-color 0.3s ease-out; 
-    transition: background-color 0.3s ease-out;
+    -webkit-transition: background-color 0.5s ease-out; 
+    transition: background-color 0.5s ease-out;
 }
 
 .header--expanded {
@@ -1160,9 +1160,14 @@ p {
 @media (min-width: 800px) {
 
 .header {
+        position: fixed; 
         background-color: rgba(47,85,114, .3)
 } 
 }
+
+.header--dark {
+        background-color: rgba(47,85,114, 0.9);
+    }
 
 @media (min-width: 800px) {
 
@@ -1185,7 +1190,11 @@ p {
         -webkit-transform-origin: 50% 0;
                 transform-origin: 50% 0; 
         background-color: #2f5572; 
-        padding: 25px 36px;
+        padding: 25px 36px; 
+        -webkit-transition: -webkit-transform 0.5s ease-out; 
+        transition: -webkit-transform 0.5s ease-out; 
+        transition: transform 0.5s ease-out; 
+        transition: transform 0.5s ease-out, -webkit-transform 0.5s ease-out;
     }
 
 @media (min-width: 800px) {
@@ -1196,6 +1205,11 @@ p {
                     transform: translateX(0)
     } 
 }
+
+.header--dark .header__logo {
+            -webkit-transform: scale(.6);
+                    transform: scale(.6);
+        }
 
 .header__menu-icon {
         width: 20px; 
@@ -1332,7 +1346,7 @@ p {
 
 .primary-nav ul {
         margin: 0; 
-        padding: 0; 
+        padding: 0;
     }
 
 .primary-nav ul::after {
@@ -1384,6 +1398,10 @@ p {
             font-size: 1rem; 
             background-color: transparent
     } 
+            
+            .primary-nav a.active-link {
+                color: #FABB69; 
+            } 
 }
 
 .reveal-item {
