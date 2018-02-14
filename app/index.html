@@ -9,6 +9,7 @@
   <meta name="description" content="Your clarity. One trip away. We create soul restoring journeys that inspire you to be you.">
 
   <link rel="stylesheet" href="temp/css/style.css">
+  <script src="./temp/scripts/vendor.js"></script>
 
 </head>
 
@@ -160,7 +161,7 @@
     </div>
   </div>
 
-  <div id="testimonials" data-menu-link="#testimonials-link" class="page-section page-section--no-pad-md page-section--testimonials">
+  <div id="testimonials" data-menu-link="#testimonials-link" class="page-section page-section--no-pad-md page-section--testimonials lazyload">
     <div class="wrapper pad-md">
 
       <h2 class="section-title section-title--blue">
@@ -190,7 +191,7 @@
         <div class="col-lg-4">
           <div class="testimonial">
             <div class="testimonial__photo">
-              <img sizes="160px" srcset="./assets/images/testimonial-john.jpg 160w, 
+              <img class="lazyload" sizes="160px" data-srcset="./assets/images/testimonial-john.jpg 160w, 
                 ./assets/images/testimonial-john-hi-dpi.jpg 320w" alt="John Doe">
             </div>
             <div class="testimonials__content">
@@ -206,7 +207,7 @@
         <div class="col-lg-4">
           <div class="testimonial">
             <div class="testimonial__photo">
-              <img sizes="160px" srcset="./assets/images/testimonial-cat.jpg 160w, 
+              <img class="lazyload" sizes="160px" data-srcset="./assets/images/testimonial-cat.jpg 160w, 
                 ./assets/images/testimonial-cat-hi-dpi.jpg 320w" alt="Cat">
             </div>
             <div class="testimonials__content">
