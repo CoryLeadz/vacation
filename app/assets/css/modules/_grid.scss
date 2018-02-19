@@ -1,6 +1,6 @@
 .row {
 
-    @mixin clearfix; 
+    @mixin clearfix {} 
 
     @mixin atSmall {
 
@@ -51,6 +51,8 @@
             padding-right: 45px; 
         }
     }
+
+
 }
 
 /* COLUMNS */ 
@@ -141,7 +143,7 @@
     }
     
     & > div {
-        float: left; 
+        float: none; 
         display: flex; 
     }
 }
@@ -152,7 +154,7 @@
     }
     
     & > div {
-        float: left; 
+        float: none; 
         display: flex; 
     }
 }

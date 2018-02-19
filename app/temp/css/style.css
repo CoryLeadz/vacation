@@ -890,7 +890,7 @@ p {
 }
 
 .flex-height-md > div {
-        float: left; 
+        float: none; 
         display: -webkit-box; 
         display: -ms-flexbox; 
         display: flex; 
@@ -906,7 +906,7 @@ p {
 }
 
 .flex-height-lg > div {
-        float: left; 
+        float: none; 
         display: -webkit-box; 
         display: -ms-flexbox; 
         display: flex; 
@@ -1054,6 +1054,10 @@ p {
 
 .icon {
     background-image: url('../../assets/images/sprites/sprite-240e8c34.svg');
+    }
+
+.no-svg .icon {
+        background-image: url('../../assets/images/sprites/sprite-240e8c34.png');
     }
 
 .icon--clear-view-escapes {
