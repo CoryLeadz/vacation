@@ -8,12 +8,15 @@ browserSync = require('browser-sync').create();
 //------------------------------------------------------------------------------
 
 gulp.task('watch', function(){
-
+   
     browserSync.init({
-        browser: 'google chrome',
         notify: false, 
-        server: "app"
+        browser: 'google chrome',
+        server: {
+            baseDir: "app"
+        }
     });
+});
     
     watch('app/index.html', function(){
         // TODO: update to *.html or any other front-end file type
@@ -27,8 +30,6 @@ gulp.task('watch', function(){
     watch('app/assets/scripts/**/*.js', function(){
         gulp.start('scriptsRefresh');
     });
-    
-});
 
 // inject CSS into browserSync without reload 
 
